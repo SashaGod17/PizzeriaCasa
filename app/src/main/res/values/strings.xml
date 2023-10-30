@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Pizzeria</string>
+    <string name="strTitulo">Pizzeria Jerez</string>
+    <string name="strEligirPizza">Eligir Pizza</string>
+    <string name="strConfigurar">Configurar</string>
+    <string name="strSalir">Salir</string>
+    <string name="strConfigurar2">Esta es la activity de configuracion</string>
+    <string name="strElegirTipoPizza">Elige el tipo de pizza que deseas</string>
+    <string name="strPersonalizada">Pizza personalizada</string>
+    <string name="strCreaTuPizza">Creala Tu Mismo!</string>
+    <string name="strRepetirPedido">Repetir el ultimo pedido</string>
+</resources>
