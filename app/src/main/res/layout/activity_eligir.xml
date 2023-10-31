@@ -18,32 +18,32 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnNuestrasPizzas"
         android:layout_width="195dp"
         android:layout_height="50dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="148dp"
-        android:text="@string/strPersonalizada"
+        android:text="@string/strNuestrasPizzas"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTipoPizza" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnCrearPizza"
         android:layout_width="199dp"
         android:layout_height="48dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="68dp"
         android:text="@string/strCreaTuPizza"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/btnNuestrasPizzas" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnRepetirUltimoPedido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="68dp"
         android:text="@string/strRepetirPedido"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/btnCrearPizza" />
 </androidx.constraintlayout.widget.ConstraintLayout>

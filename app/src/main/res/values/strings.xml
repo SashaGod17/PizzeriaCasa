@@ -9,4 +9,5 @@
     <string name="strPersonalizada">Pizza personalizada</string>
     <string name="strCreaTuPizza">Creala Tu Mismo!</string>
     <string name="strRepetirPedido">Repetir el ultimo pedido</string>
+    <string name="strNuestrasPizzas">Nuestras Pizzas</string>
 </resources>
