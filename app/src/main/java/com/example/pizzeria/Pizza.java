@@ -33,6 +33,11 @@ public class Pizza {
         this.ingredientes = ingredientes;
     }
 
+    public Pizza(String nombre, ArrayList<Ingrediente> ingredientes){
+        this.nombre = nombre;
+        this.ingredientes = ingredientes;
+    }
+
 
     public int getImagen() {
         return imagen;
