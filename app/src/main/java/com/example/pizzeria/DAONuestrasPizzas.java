@@ -5,13 +5,16 @@ import java.util.Arrays;
 
 public class DAONuestrasPizzas {
     private ArrayList<Pizza> lista;
-
+    private ArrayList<Ingrediente> ingredientes;
     private static DAONuestrasPizzas dao;;
 
 
     private DAONuestrasPizzas() {
-        this.lista.add(new Pizza("Pizza Barbacoa", new ArrayList<Ingrediente>(Arrays.asList(Ingrediente.POLLO, Ingrediente.TERNERA, Ingrediente.SALSA_BARBACOA))));
-        this.lista.add(new Pizza("Pizza 4 Quesos", new ArrayList<Ingrediente>(Arrays.asList(Ingrediente.MOZARELLA, Ingrediente.QUESOS_VARIADOS, Ingrediente.TOMATE))));
+        this.ingredientes.add(Ingrediente.POLLO);
+        this.ingredientes.add(Ingrediente.CHAMPIÑONES);
+        this.ingredientes.add(Ingrediente.TOMATE);
+        this.lista.add(new Pizza("Pizza Barbacoa", this.ingredientes));
+        this.lista.add(new Pizza("Pizza 4 Quesos", this.ingredientes));
     }
     public static DAONuestrasPizzas getInstance() {
         if (dao == null) {

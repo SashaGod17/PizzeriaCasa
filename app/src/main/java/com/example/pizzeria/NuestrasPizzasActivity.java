@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class NuestrasPizzasActivity extends AppCompatActivity {
 
-    ArrayList<Pizza> arrayPizzas;
+    ArrayList<Pizza> arrayPizzas = new ArrayList<Pizza>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +25,8 @@ public class NuestrasPizzasActivity extends AppCompatActivity {
         ingredientes.add(Ingrediente.ATUN);
         ingredientes.add(Ingrediente.CHAMPIÑONES);
 
-        arrayPizzas.add(new Pizza("Barbacoa", ingredientes));
-        PizzaAdapter adapter = new PizzaAdapter(arrayPizzas);
+        this.arrayPizzas.add(new Pizza("Barbacoa", ingredientes));
+        PizzaAdapter adapter = new PizzaAdapter(this.arrayPizzas);
         rvNuestrasPizzas.setAdapter(adapter);
         rvNuestrasPizzas.setLayoutManager(new LinearLayoutManager(this));
     }

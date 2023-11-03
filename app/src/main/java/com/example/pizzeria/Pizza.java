@@ -36,6 +36,7 @@ public class Pizza {
     public Pizza(String nombre, ArrayList<Ingrediente> ingredientes){
         this.nombre = nombre;
         this.ingredientes = ingredientes;
+        this.tamaño = Tamaño.PEQUEÑA;
     }
 
 

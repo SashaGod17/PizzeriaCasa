@@ -38,6 +38,7 @@ public class PizzaAdapter extends RecyclerView.Adapter<PizzaAdapter.ViewHolder> 
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         Pizza pizza = arrayPizzas.get(position);
+        System.out.println("Pizza Fufa");
 
         ImageView img = holder.imgPizza;
         img.setImageResource(R.drawable.pizza_default);
@@ -48,14 +49,18 @@ public class PizzaAdapter extends RecyclerView.Adapter<PizzaAdapter.ViewHolder> 
         TextView txtIngredientes = holder.txtIngredientes;
         ArrayList<Ingrediente> ingredientes = pizza.getIngredientes();
         for (Ingrediente i : ingredientes){
-            txtIngredientes.setText(txtIngredientes.getText() + " " + i.toString());
+            txtIngredientes.setText(txtIngredientes.getText() + ", " + i.toString());
         }
 
     }
 
     @Override
     public int getItemCount() {
-        return arrayPizzas.size();
+        if (arrayPizzas == null) {
+            return 0;
+        } else {
+            return arrayPizzas.size();
+        }
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements com.example.pizzeria.ViewHolder{
