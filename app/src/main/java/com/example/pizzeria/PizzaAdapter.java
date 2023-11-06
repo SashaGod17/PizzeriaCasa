@@ -38,43 +38,38 @@ public class PizzaAdapter extends RecyclerView.Adapter<PizzaAdapter.ViewHolder> 
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         Pizza pizza = arrayPizzas.get(position);
-        System.out.println("Pizza Fufa");
+
 
         ImageView img = holder.imgPizza;
         img.setImageResource(R.drawable.pizza_default);
 
         TextView txtNombrePizza = holder.txtNombrePizza;
-        txtNombrePizza.setText(pizza.getNombre());
-
-        TextView txtIngredientes = holder.txtIngredientes;
+        txtNombrePizza.setText(pizza.getNombre() + "\n" +"\n");
         ArrayList<Ingrediente> ingredientes = pizza.getIngredientes();
         for (Ingrediente i : ingredientes){
-            txtIngredientes.setText(txtIngredientes.getText() + ", " + i.toString());
+            txtNombrePizza.setText(txtNombrePizza.getText() + i.toString() + ", " );
         }
 
     }
 
     @Override
+
     public int getItemCount() {
-        if (arrayPizzas == null) {
-            return 0;
-        } else {
-            return arrayPizzas.size();
-        }
+        return arrayPizzas.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements com.example.pizzeria.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         public ImageView imgPizza;
         public TextView txtNombrePizza;
-        public  TextView txtIngredientes;
+
 
         public ViewHolder(View itemView){
             super(itemView);
 
             imgPizza = (ImageView) itemView.findViewById(R.id.imgPizza);
             txtNombrePizza = (TextView) itemView.findViewById(R.id.txtNombrePizza);
-            txtIngredientes = (TextView) itemView.findViewById(R.id.txtIngredientes);
+
         }
     }
 

@@ -25,7 +25,9 @@ public class NuestrasPizzasActivity extends AppCompatActivity {
         ingredientes.add(Ingrediente.ATUN);
         ingredientes.add(Ingrediente.CHAMPIÑONES);
 
+        this.arrayPizzas.add(new Pizza("4 Quesos", ingredientes));
         this.arrayPizzas.add(new Pizza("Barbacoa", ingredientes));
+        this.arrayPizzas.add(new Pizza("BBQ", ingredientes));
         PizzaAdapter adapter = new PizzaAdapter(this.arrayPizzas);
         rvNuestrasPizzas.setAdapter(adapter);
         rvNuestrasPizzas.setLayoutManager(new LinearLayoutManager(this));
