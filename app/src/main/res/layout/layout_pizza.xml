@@ -16,8 +16,8 @@
         android:id="@+id/txtNombrePizza"
         android:layout_width="220dp"
         android:layout_height="match_parent"
-        android:textAlignment="viewStart"
         android:textIsSelectable="false"
+        android:gravity="center"
         />
 
 
@@ -26,6 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="1"
+        android:button="@android:drawable/btn_star_big_off"
         android:text="@string/strVacio" />
 
 </LinearLayout>

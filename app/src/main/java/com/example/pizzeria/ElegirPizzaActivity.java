@@ -18,7 +18,7 @@ public class ElegirPizzaActivity extends AppCompatActivity {
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("Intento iniciado");
+
                 Intent nuestrasPizzas = new Intent(ElegirPizzaActivity.this, NuestrasPizzasActivity.class);
                 startActivity(nuestrasPizzas);
             }

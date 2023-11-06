@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class DAONuestrasPizzas {
-    private ArrayList<Pizza> lista;
-    private ArrayList<Ingrediente> ingredientes;
-    private static DAONuestrasPizzas dao;;
+    private ArrayList<Pizza> lista = new ArrayList<Pizza>();
+    private ArrayList<Ingrediente> ingredientes = new ArrayList<Ingrediente>();
+    private static DAONuestrasPizzas dao =null;
 
 
     private DAONuestrasPizzas() {

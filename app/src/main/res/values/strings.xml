@@ -11,4 +11,7 @@
     <string name="strRepetirPedido">Repetir el ultimo pedido</string>
     <string name="strNuestrasPizzas">Nuestras Pizzas</string>
     <string name="strVacio" />
+    <string name="strEligeTamaño">Elige el tamaño de tu pizza</string>
+    <string name="strPizzaPequeña">Pequeña (4.50)</string>
+    <string name="strPizzaMediana">Mediana (6.50)</string>
 </resources>

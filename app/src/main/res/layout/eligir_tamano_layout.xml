@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top"
+    android:orientation="vertical">
+
+    <LinearLayout
+    android:layout_width="427dp"
+    android:layout_height="126dp"
+    android:gravity="top"
+    android:orientation="horizontal">
+
+
+    <ImageView
+        android:id="@+id/imgPizza"
+        android:layout_width="108dp"
+        android:layout_height="match_parent" />
+
+
+        <TextView
+            android:id="@+id/txtNombrePizza"
+            android:layout_width="303dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textIsSelectable="false" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtEligeTamaño"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/strEligeTamaño"
+        android:textAlignment="center"
+        android:textSize="28dp"
+        android:textStyle="bold|italic" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtPizzaPequeña"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:text="@string/strPizzaPequeña" />
+
+            <RadioButton
+                android:id="@+id/rbuttonPizzaPequeña"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtPizzaMediana"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/strPizzaMediana" />
+
+            <RadioButton
+                android:id="@+id/rbuttonPizzaMediana"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/strVacio" />
+        </LinearLayout>
+
+    </RadioGroup>
+</LinearLayout>
