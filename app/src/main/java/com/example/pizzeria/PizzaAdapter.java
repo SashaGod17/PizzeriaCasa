@@ -1,5 +1,6 @@
 package com.example.pizzeria;
 
+
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -14,14 +15,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class PizzaAdapter extends RecyclerView.Adapter<PizzaAdapter.ViewHolder> {
-
-    public interface OnItemClickListener {
-        void onItemClick(int position);
-    }
-
-    private OnItemClickListener listener;
-
-
 
 
     private ArrayList<Pizza> arrayPizzas;
@@ -42,6 +35,8 @@ public class PizzaAdapter extends RecyclerView.Adapter<PizzaAdapter.ViewHolder> 
         ViewHolder viewHolder = new ViewHolder(pizzaView);
 
         return viewHolder;
+
+
     }
 
     @Override
@@ -59,6 +54,8 @@ public class PizzaAdapter extends RecyclerView.Adapter<PizzaAdapter.ViewHolder> 
         for (Ingrediente i : ingredientes){
             txtNombrePizza.setText(txtNombrePizza.getText() + i.toString() + ", " );
         }
+
+        holder.setTagPizza(pizza);
 
     }
 
@@ -80,6 +77,25 @@ public class PizzaAdapter extends RecyclerView.Adapter<PizzaAdapter.ViewHolder> 
             imgPizza = (ImageView) itemView.findViewById(R.id.imgPizza);
             txtNombrePizza = (TextView) itemView.findViewById(R.id.txtNombrePizza);
 
+
+            txtNombrePizza.setOnClickListener(view -> {
+                int position = getAdapterPosition();
+                if(position != RecyclerView.NO_POSITION){
+                    String infoSeleccionada = (String) txtNombrePizza.getText();
+                    int imagen = R.drawable.pizza_default;
+                    Context context = view.getContext();
+
+                    Intent intent = new Intent(context, EligirTamanoActivity.class);
+                    intent.putExtra("TituloPizza", infoSeleccionada);
+                    intent.putExtra("ImagenPizza", imagen);
+
+                    context.startActivity(intent);
+                }
+            });
+        }
+
+        public void setTagPizza(Pizza p){
+            this.txtNombrePizza.setTag(p);
         }
     }
 

@@ -1,5 +1,6 @@
 package com.example.pizzeria;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -29,6 +30,15 @@ public class NuestrasPizzasActivity extends AppCompatActivity {
         PizzaAdapter adapter = new PizzaAdapter(this.arrayPizzas);
         rvNuestrasPizzas.setAdapter(adapter);
         rvNuestrasPizzas.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    public void eligirTamano(View view){
+        Pizza pizza;
+        if (view.getTag() instanceof  Pizza){
+            pizza = (Pizza) view.getTag();
+            Intent i = new Intent(NuestrasPizzasActivity.this, EligirTamanoActivity.class);
+            startActivity(i);
+        }
     }
 
 }

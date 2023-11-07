@@ -16,9 +16,8 @@
         android:id="@+id/txtNombrePizza"
         android:layout_width="220dp"
         android:layout_height="match_parent"
-        android:textIsSelectable="false"
         android:gravity="center"
-        />
+        android:textIsSelectable="false" />
 
 
     <CheckBox

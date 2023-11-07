@@ -39,46 +39,45 @@
 
     <RadioGroup
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="437dp">
 
-        <LinearLayout
+        <RadioButton
+            android:id="@+id/rbuttonPizzaPequeña"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_weight="1"
+            android:text="@string/strPequena"
+            android:textAlignment="center" />
 
-            <TextView
-                android:id="@+id/txtPizzaPequeña"
-                android:layout_width="wrap_content"
-                android:layout_height="35dp"
-                android:layout_weight="1"
-                android:text="@string/strPizzaPequeña" />
-
-            <RadioButton
-                android:id="@+id/rbuttonPizzaPequeña"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
+        <RadioButton
+            android:id="@+id/rbuttonPizzaMediana"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_weight="1"
+            android:text="@string/strMediana"
+            android:textAlignment="center" />
 
-            <TextView
-                android:id="@+id/txtPizzaMediana"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/strPizzaMediana" />
+        <RadioButton
+            android:id="@+id/rbuttonGrande"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/strGrande"
+            android:textAlignment="center" />
 
-            <RadioButton
-                android:id="@+id/rbuttonPizzaMediana"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/strVacio" />
-        </LinearLayout>
+        <RadioButton
+            android:id="@+id/rbuttonFamiliar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/strFamiliar"
+            android:textAlignment="center" />
 
     </RadioGroup>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="109dp"
+        android:text="@string/strSeleccionarTamano" />
 </LinearLayout>

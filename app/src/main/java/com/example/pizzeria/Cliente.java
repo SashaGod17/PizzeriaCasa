@@ -8,6 +8,8 @@ public class Cliente {
     private String constraseña;
     private ArrayList<Pizza> favoritas;
 
+    private ArrayList<Pedido> historialPedidos;
+
     public Cliente(String nombre, String correo, String constraseña) {
         this.nombre = nombre;
         this.correo = correo;
