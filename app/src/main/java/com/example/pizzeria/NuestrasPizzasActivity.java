@@ -37,6 +37,7 @@ public class NuestrasPizzasActivity extends AppCompatActivity {
         if (view.getTag() instanceof  Pizza){
             pizza = (Pizza) view.getTag();
             Intent i = new Intent(NuestrasPizzasActivity.this, EligirTamanoActivity.class);
+            i.putExtra("Pizza", pizza);
             startActivity(i);
         }
     }

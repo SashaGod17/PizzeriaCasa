@@ -17,6 +17,7 @@
         android:layout_width="220dp"
         android:layout_height="match_parent"
         android:gravity="center"
+        android:onClick="eligirTamano"
         android:textIsSelectable="false" />
 
 
