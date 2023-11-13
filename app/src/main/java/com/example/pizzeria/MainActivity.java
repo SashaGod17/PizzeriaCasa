@@ -38,7 +38,20 @@ public class MainActivity extends AppCompatActivity {
                 cliente = c;
             }
         }
-        if (cliente == null){
+        if(usuario.isEmpty()&&contra.isEmpty()){
+            mostrarAlertDialogFaltaTodo();
+        }
+        else if(usuario.isEmpty()){
+            mostrarAlertDialogFaltaUsuario();
+            inputUsuario.setText(null);
+            inputContra.setText(null);
+        }
+        else if(contra.isEmpty()){
+            mostrarAlertDialogFaltaContra();
+            inputUsuario.setText(null);
+            inputContra.setText(null);
+        }
+        else if (cliente == null){
             mostrarAlertDialog();
             inputUsuario.setText(null);
             inputContra.setText(null);
@@ -63,6 +76,39 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
     }
 
+    private void mostrarAlertDialogFaltaUsuario() {
 
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("El campo de USUARIO está vacio")
+                .setTitle("Error")
+                .setPositiveButton("OK", null);
+
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+    private void mostrarAlertDialogFaltaContra() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("El campo de CONTRASEÑA está vacio")
+                .setTitle("Error")
+                .setPositiveButton("OK", null);
+
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    private void mostrarAlertDialogFaltaTodo() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("El campo de USUARIO y CONTRASEÑA están vacios")
+                .setTitle("Error")
+                .setPositiveButton("OK", null);
+
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
 
 }

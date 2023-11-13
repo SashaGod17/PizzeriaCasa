@@ -10,8 +10,8 @@ public class ManejadorColores {
             return color;
         }
 
-        public static void setColor(int color) {
-            color = color;
+        public static void setColor(int c) {
+            color = c;
         }
 
 }

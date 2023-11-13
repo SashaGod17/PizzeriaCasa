@@ -16,7 +16,8 @@ public class ConfigurarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configurar);
-        getWindow().getDecorView().setBackgroundColor(ManejadorColores.getColor());
+        View vista = findViewById(R.id.configLayout);
+        vista.setBackgroundColor(ManejadorColores.getColor());
         AppManager.getInstance().addActivity(this);
         Button btnRojo = findViewById(R.id.btnRojo);
         Button btnVerde = findViewById(R.id.btnVerde);
