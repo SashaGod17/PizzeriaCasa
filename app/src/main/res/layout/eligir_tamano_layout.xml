@@ -38,6 +38,7 @@
         android:textStyle="bold|italic" />
 
     <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="match_parent"
         android:layout_height="437dp">
 
@@ -46,6 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="activarBoton"
             android:text="@string/strPequena"
             android:textAlignment="center" />
 
@@ -54,6 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="activarBoton"
             android:text="@string/strMediana"
             android:textAlignment="center" />
 
@@ -62,6 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="activarBoton"
             android:text="@string/strGrande"
             android:textAlignment="center" />
 
@@ -70,14 +74,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="activarBoton"
             android:text="@string/strFamiliar"
             android:textAlignment="center" />
 
     </RadioGroup>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnConfirmarTamano"
         android:layout_width="match_parent"
         android:layout_height="109dp"
+        android:enabled="false"
+        android:onClick="confirmarTamano"
         android:text="@string/strSeleccionarTamano" />
 </LinearLayout>

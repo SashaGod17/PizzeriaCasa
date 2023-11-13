@@ -1,7 +1,6 @@
 package com.example.pizzeria;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class DAONuestrasPizzas {
     private ArrayList<Pizza> lista = new ArrayList<Pizza>();
@@ -15,6 +14,8 @@ public class DAONuestrasPizzas {
         this.ingredientes.add(Ingrediente.TOMATE);
         this.lista.add(new Pizza("Pizza Barbacoa", this.ingredientes));
         this.lista.add(new Pizza("Pizza 4 Quesos", this.ingredientes));
+        this.lista.add(new Pizza("Pizza Margarita", this.ingredientes));
+        this.lista.add(new Pizza("Pizza Hawaiiana", this.ingredientes));
     }
     public static DAONuestrasPizzas getInstance() {
         if (dao == null) {

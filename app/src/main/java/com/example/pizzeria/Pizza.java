@@ -116,6 +116,13 @@ public class Pizza implements Parcelable {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Pizza " + nombre + "\nIngredientes=" + ingredientes +
+                "\nTamaño=" + tamaño +
+                "\nPrecio=" + precio
+                ;
+    }
 
     @Override
     public int describeContents() {

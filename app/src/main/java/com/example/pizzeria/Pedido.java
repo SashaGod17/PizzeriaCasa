@@ -12,6 +12,7 @@ public class Pedido {
     @SuppressLint("NewApi")
     public Pedido(){
         this.fechaPedido = LocalDate.now();
+        this.listaPizzas = new ArrayList<Pizza>();
     }
 
     public ArrayList<Pizza> getListaPizzas() {
@@ -32,6 +33,19 @@ public class Pedido {
 
     public LocalDate getFechaPedido() {
         return fechaPedido;
+    }
+
+    public void anadirPizza(Pizza p){
+        this.listaPizzas.add(p);
+    }
+
+    public String imprimir(){
+        String cadena = "";
+        for (Pizza p : listaPizzas){
+            cadena += p.toString();
+            cadena += "\n";
+        }
+        return cadena;
     }
 
 }

@@ -35,6 +35,14 @@
         <activity android:name=".EligirTamanoActivity"
             android:exported="false">
         </activity>
+        <activity android:name=".PizzeriaJerezActivity"
+            android:exported="false">
+
+        </activity>
+        <activity android:name=".ConfirmarActivity"
+            android:exported="false">
+
+        </activity>
     </application>
 
 </manifest>

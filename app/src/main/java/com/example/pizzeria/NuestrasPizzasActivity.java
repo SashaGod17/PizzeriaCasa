@@ -13,11 +13,15 @@ import java.util.ArrayList;
 public class NuestrasPizzasActivity extends AppCompatActivity {
 
     ArrayList<Pizza> arrayPizzas = new ArrayList<Pizza>();
+    Cliente cliente;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nuestras_pizzas);
+        getWindow().getDecorView().setBackgroundColor(ManejadorColores.getColor());
+        AppManager.getInstance().addActivity(this);
+        cliente = (Cliente) getIntent().getParcelableExtra("Cliente");
         arrayPizzas = DAONuestrasPizzas.getInstance().getLista();
         for(Pizza p:arrayPizzas){
             System.out.println(p.toString());
@@ -38,6 +42,7 @@ public class NuestrasPizzasActivity extends AppCompatActivity {
             pizza = (Pizza) view.getTag();
             Intent i = new Intent(NuestrasPizzasActivity.this, EligirTamanoActivity.class);
             i.putExtra("Pizza", pizza);
+            i.putExtra("Cliente", cliente);
             startActivity(i);
         }
     }
