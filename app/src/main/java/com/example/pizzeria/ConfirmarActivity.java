@@ -20,7 +20,6 @@ public class ConfirmarActivity extends AppCompatActivity {
         AppManager.getInstance().addActivity(this);
         pizza = (Pizza) getIntent().getParcelableExtra("Pizza");
         cliente = (Cliente) getIntent().getParcelableExtra("Cliente");
-        pizza.calcualrPrecio();
         TextView txtResumen = findViewById(R.id.txtResumen);
         txtResumen.setText(pizza.toString());
     }

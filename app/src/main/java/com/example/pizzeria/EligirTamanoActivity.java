@@ -43,16 +43,21 @@ public class EligirTamanoActivity extends AppCompatActivity {
 
         if (findViewById(R.id.rbuttonPizzaPequeña).isSelected()){
             pizza.setTamaño(Tamaño.PEQUEÑA);
+            pizza.setPrecio(4.50);
         }
         else if (findViewById(R.id.rbuttonPizzaMediana).isSelected()){
             pizza.setTamaño(Tamaño.MEDIANA);
+            pizza.setPrecio(6.50);
         }
         else if (findViewById(R.id.rbuttonGrande).isSelected()){
             pizza.setTamaño(Tamaño.GRANDE);
+            pizza.setPrecio(9.50);
         }
         else if (findViewById(R.id.rbuttonFamiliar).isSelected()){
             pizza.setTamaño(Tamaño.FAMILIAR);
+            pizza.setPrecio(12);
         }
+
 
 
         if (cliente.getPedidoActual() == null){

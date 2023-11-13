@@ -46,8 +46,6 @@ public class Pizza implements Parcelable {
     }
 
 
-
-
     public int getImagen() {
         return imagen;
     }
