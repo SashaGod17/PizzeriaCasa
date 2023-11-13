@@ -41,7 +41,6 @@ public class Pizza implements Parcelable {
     public Pizza(String nombre, ArrayList<Ingrediente> ingredientes){
         this.nombre = nombre;
         this.ingredientes = ingredientes;
-        this.tamaño = Tamaño.PEQUEÑA;
         this.imagen=R.drawable.pizza_default;
     }
 

@@ -4,6 +4,7 @@ package com.example.pizzeria;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,7 +17,9 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Cliente cliente;
+    public Cliente cliente;
+    String usuario;
+    String contra;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,14 +31,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void IniciarSesion(View view){
         TextInputEditText inputUsuario = findViewById(R.id.inputUsuario);
-        String usuario = inputUsuario.getText().toString();
+        usuario = inputUsuario.getText().toString();
         TextInputEditText inputContra = findViewById(R.id.inputContra);
-        String contra = inputContra.getText().toString();
+        contra = inputContra.getText().toString();
 
         ArrayList<Cliente> clientes = DAOClientes.getInstance().getLista();
         for(Cliente c : clientes){
             if (c.getNombre().equalsIgnoreCase(usuario) && c.getConstraseña().equals(contra)){
                 cliente = c;
+                mostrarSesionIniciada();
+
             }
         }
         if(usuario.isEmpty()&&contra.isEmpty()){
@@ -56,10 +61,8 @@ public class MainActivity extends AppCompatActivity {
             inputUsuario.setText(null);
             inputContra.setText(null);
         }
-        else{
-            Intent i = new Intent(MainActivity.this, PizzeriaJerezActivity.class);
-            i.putExtra("Cliente", cliente);
-            startActivity(i);
+        else if (!cliente.getNombre().equalsIgnoreCase(usuario) || !cliente.getConstraseña().equalsIgnoreCase(contra)){
+        mostrarAlertDialog();
         }
 
     }
@@ -67,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
     private void mostrarAlertDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Usuario o contraseña incorrecta!! \n Intentalo de Nuevo")
+        builder.setMessage(usuario + "   " + contra )
                 .setTitle("Error")
                 .setPositiveButton("OK", null);
 
@@ -105,6 +108,25 @@ public class MainActivity extends AppCompatActivity {
         builder.setMessage("El campo de USUARIO y CONTRASEÑA están vacios")
                 .setTitle("Error")
                 .setPositiveButton("OK", null);
+
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+    private void mostrarSesionIniciada() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("SesionIniciada")
+                .setTitle("OK")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Intent intent = new Intent(MainActivity.this, PizzeriaJerezActivity.class);
+                        intent.putExtra("Cliente", cliente);
+                        startActivity(intent);
+                        finish();
+                    }
+                });
 
 
         AlertDialog dialog = builder.create();

@@ -2,6 +2,7 @@ package com.example.pizzeria;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -14,9 +15,9 @@ public class PizzeriaJerezActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pizzeria_jerez_layout);
+        cliente = (Cliente) getIntent().getParcelableExtra("Cliente");
         getWindow().getDecorView().setBackgroundColor(ManejadorColores.getColor());
         AppManager.getInstance().addActivity(this);
-        cliente = (Cliente) getIntent().getParcelableExtra("Cliente");
         Button btnElegir =(Button) findViewById(R.id.btnEligirPizza);
         btnElegir.setOnClickListener(new View.OnClickListener() {
             @Override

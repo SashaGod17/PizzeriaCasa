@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Button;
@@ -14,20 +15,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class EligirTamanoActivity extends AppCompatActivity {
 
-    private Pizza pizza;
-    private Cliente cliente;
+    public Pizza pizza;
+    public Cliente cliente;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.eligir_tamano_layout);
         getWindow().getDecorView().setBackgroundColor(ManejadorColores.getColor());
         AppManager.getInstance().addActivity(this);
-        pizza = (Pizza) getIntent().getParcelableExtra("Pizza");
-        cliente = (Cliente) getIntent().getParcelableExtra("Cliente");
+        this.pizza = (Pizza) getIntent().getParcelableExtra("Pizza");
+        this.cliente = (Cliente) getIntent().getParcelableExtra("Cliente");
 
         TextView txtView = findViewById(R.id.txtNombrePizza);
         ImageView imgPizza = (ImageView) findViewById(R.id.imgPizza);
 
-        txtView.setText(pizza.getNombre());
+        txtView.setText(pizza.getNombre() + pizza.getTamaño());
         imgPizza.setImageResource(pizza.getImagen());
 
 
@@ -40,21 +41,24 @@ public class EligirTamanoActivity extends AppCompatActivity {
     }
 
     public void confirmarTamano(View view){
+        RadioButton peque = (RadioButton) findViewById(R.id.rbuttonPizzaPequeña);
+        RadioButton mediana = (RadioButton) findViewById(R.id.rbuttonPizzaMediana);
+        RadioButton grande = (RadioButton) findViewById(R.id.rbuttonGrande);
+        RadioButton familiar = (RadioButton) findViewById(R.id.rbuttonFamiliar);
 
-        if (findViewById(R.id.rbuttonPizzaPequeña).isSelected()){
-            pizza.setTamaño(Tamaño.PEQUEÑA);
+        if ( peque.isChecked()){
+            this.pizza.setTamaño(Tamaño.PEQUEÑA);
+        }
+        else if (mediana.isChecked()){
+            this.pizza.setTamaño(Tamaño.MEDIANA);
 
         }
-        else if (findViewById(R.id.rbuttonPizzaMediana).isSelected()){
-            pizza.setTamaño(Tamaño.MEDIANA);
+        else if (grande.isChecked()){
+            this.pizza.setTamaño(Tamaño.GRANDE);
 
         }
-        else if (findViewById(R.id.rbuttonGrande).isSelected()){
-            pizza.setTamaño(Tamaño.GRANDE);
-
-        }
-        else if (findViewById(R.id.rbuttonFamiliar).isSelected()){
-            pizza.setTamaño(Tamaño.FAMILIAR);
+        else if (familiar.isChecked()){
+            this.pizza.setTamaño(Tamaño.FAMILIAR);
 
         }
 
@@ -79,7 +83,7 @@ public class EligirTamanoActivity extends AppCompatActivity {
 
     }
 
-  /*  private void mostrarAlertDialog() {
+    private void mostrarAlertDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(cliente.getPedidoActual().imprimir())
@@ -96,6 +100,6 @@ public class EligirTamanoActivity extends AppCompatActivity {
 
         AlertDialog dialog = builder.create();
         dialog.show();
-    } */
+    }
 
 }

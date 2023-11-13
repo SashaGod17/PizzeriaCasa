@@ -19,9 +19,9 @@ public class NuestrasPizzasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nuestras_pizzas);
+        cliente = (Cliente) getIntent().getParcelableExtra("Cliente");
         getWindow().getDecorView().setBackgroundColor(ManejadorColores.getColor());
         AppManager.getInstance().addActivity(this);
-        cliente = (Cliente) getIntent().getParcelableExtra("Cliente");
         arrayPizzas = DAONuestrasPizzas.getInstance().getLista();
         for(Pizza p:arrayPizzas){
             System.out.println(p.toString());
