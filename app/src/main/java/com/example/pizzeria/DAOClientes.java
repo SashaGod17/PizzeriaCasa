@@ -27,4 +27,11 @@ public class DAOClientes {
     public void anadirCliente(Cliente cliente){
         this.lista.add(cliente);
     }
+
+    public Cliente buscarCliente(String nombre) {
+        for (int i = 0; i < this.lista.size(); i++) {
+            if (this.lista.get(i).getNombre().equalsIgnoreCase(nombre)) return this.lista.get(i);
+        }
+        return null;
+    }
 }

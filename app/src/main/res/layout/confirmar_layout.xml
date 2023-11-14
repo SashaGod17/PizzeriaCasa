@@ -38,6 +38,19 @@
         android:text="@string/strPagar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.191"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtResumen" />
+
+    <TextView
+        android:id="@+id/txtPrecio"
+        android:layout_width="188dp"
+        android:layout_height="46dp"
+        android:gravity="center"
+        android:text="@string/strPrecio0"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnPagar"
         app:layout_constraintTop_toBottomOf="@+id/txtResumen" />
 </androidx.constraintlayout.widget.ConstraintLayout>

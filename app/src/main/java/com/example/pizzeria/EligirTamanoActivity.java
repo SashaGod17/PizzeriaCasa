@@ -17,18 +17,21 @@ public class EligirTamanoActivity extends AppCompatActivity {
 
     public Pizza pizza;
     public Cliente cliente;
+
+    String usuario;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.eligir_tamano_layout);
         getWindow().getDecorView().setBackgroundColor(ManejadorColores.getColor());
         AppManager.getInstance().addActivity(this);
         this.pizza = (Pizza) getIntent().getParcelableExtra("Pizza");
-        this.cliente = (Cliente) getIntent().getParcelableExtra("Cliente");
+        usuario = getIntent().getStringExtra("usuario");
+        cliente = DAOClientes.getInstance().buscarCliente(usuario);
 
         TextView txtView = findViewById(R.id.txtNombrePizza);
         ImageView imgPizza = (ImageView) findViewById(R.id.imgPizza);
 
-        txtView.setText(pizza.getNombre() + pizza.getTamaño());
+        txtView.setText(pizza.getNombre());
         imgPizza.setImageResource(pizza.getImagen());
 
 
@@ -74,11 +77,7 @@ public class EligirTamanoActivity extends AppCompatActivity {
             pedidoActual.anadirPizza(pizza);
         }
 
-        Intent intent = new Intent(EligirTamanoActivity.this, ConfirmarActivity.class);
-        intent.putExtra("Pizza", pizza);
-        startActivity(intent);
-
-
+        mostrarAlertDialog();
 
 
     }
@@ -86,13 +85,13 @@ public class EligirTamanoActivity extends AppCompatActivity {
     private void mostrarAlertDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(cliente.getPedidoActual().imprimir())
+        builder.setMessage("Has seleccionado " + this.pizza.getTamaño())
                 .setTitle("Tamaño confirmado")
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Intent intent = new Intent(EligirTamanoActivity.this, PizzeriaJerezActivity.class);
-                        intent.putExtra("Cliente", cliente);
+                        intent.putExtra("usuario", usuario);
                         startActivity(intent);
                     }
                 });

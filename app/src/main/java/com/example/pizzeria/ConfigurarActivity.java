@@ -22,6 +22,14 @@ public class ConfigurarActivity extends AppCompatActivity {
         Button btnRojo = findViewById(R.id.btnRojo);
         Button btnVerde = findViewById(R.id.btnVerde);
         Button btnAzul = findViewById(R.id.btnAzul);
+        Button btnBlanco = findViewById(R.id.btnBlanco);
+
+        btnBlanco.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cambiarColor(Color.WHITE);
+            }
+        });
         btnRojo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Pizzeria</string>
     <string name="strTitulo">Pizzeria Jerez</string>
-    <string name="strEligirPizza">Eligir Pizza</string>
+    <string name="strEligirPizza">Elegir Pizza</string>
     <string name="strConfigurar">Configurar</string>
     <string name="strSalir">Salir</string>
     <string name="strConfigurar2">Esta es la activity de configuracion</string>
@@ -26,4 +26,8 @@
     <string name="strRojo">Rojo</string>
     <string name="strVerde">Verde</string>>
     <string name="strAzul">Azul</string>
+    <string name="strPrecio0">Precio Total: 0.00 €</string>
+    <string name="strIngredientes">Ingredientes</string>
+    <string name="strCrearPizza">Crear Pizza</string>
+    <string name="strBlanco">Blanco</string>
 </resources>

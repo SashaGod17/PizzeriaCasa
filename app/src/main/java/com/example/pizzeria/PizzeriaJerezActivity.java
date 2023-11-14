@@ -11,20 +11,33 @@ import androidx.appcompat.app.AppCompatActivity;
 public class PizzeriaJerezActivity extends AppCompatActivity {
 
     Cliente cliente;
+    Pedido pedidoActual;
+
+    String usuario;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pizzeria_jerez_layout);
-        cliente = (Cliente) getIntent().getParcelableExtra("Cliente");
+        usuario = getIntent().getStringExtra("usuario");
+        cliente = DAOClientes.getInstance().buscarCliente(usuario);
+       /* try {
+            pedidoActual = (Pedido) getIntent().getParcelableExtra("Pedido Actual");
+        }
+        catch (Exception e){
+            pedidoActual = null;
+        }*/
         getWindow().getDecorView().setBackgroundColor(ManejadorColores.getColor());
         AppManager.getInstance().addActivity(this);
         Button btnElegir =(Button) findViewById(R.id.btnEligirPizza);
+        Button btnCarrito = (Button) findViewById(R.id.btnCarrito);
+        if(cliente.getPedidoActual()!=null) btnCarrito.setEnabled(true);
         btnElegir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(PizzeriaJerezActivity.this, NuestrasPizzasActivity.class);
-                intent.putExtra("Cliente", cliente);
+                Intent intent = new Intent(PizzeriaJerezActivity.this, ElegirPizzaActivity.class);
+                intent.putExtra("usuario", usuario);
                 startActivity(intent);
+
             }
         });
         Button btnConfigurar = (Button) findViewById(R.id.btnConfigurar);
@@ -33,10 +46,16 @@ public class PizzeriaJerezActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(PizzeriaJerezActivity.this, ConfigurarActivity.class);
                 startActivity(intent);
-                finish();
+
             }
         });
 
+
+    }
+    public void irAlCarrito(View view){
+        Intent intent = new Intent(PizzeriaJerezActivity.this, ConfirmarActivity.class);
+        intent.putExtra("usuario", usuario);
+        startActivity(intent);
 
     }
 

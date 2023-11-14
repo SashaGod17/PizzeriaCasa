@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<Cliente> clientes = DAOClientes.getInstance().getLista();
         for(Cliente c : clientes){
             if (c.getNombre().equalsIgnoreCase(usuario) && c.getConstraseña().equals(contra)){
-                cliente = c;
+                cliente = DAOClientes.getInstance().buscarCliente(usuario);
                 mostrarSesionIniciada();
 
             }
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
     private void mostrarAlertDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(usuario + "   " + contra )
+        builder.setMessage("Usuario o Contraseña incorrecto!!")
                 .setTitle("Error")
                 .setPositiveButton("OK", null);
 
@@ -122,9 +122,9 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Intent intent = new Intent(MainActivity.this, PizzeriaJerezActivity.class);
-                        intent.putExtra("Cliente", cliente);
+                        intent.putExtra("usuario", usuario);
                         startActivity(intent);
-                        finish();
+
                     }
                 });
 

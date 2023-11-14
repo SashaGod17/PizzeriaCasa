@@ -10,9 +10,10 @@
         android:id="@+id/btnRojo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="184dp"
+        android:layout_marginTop="292dp"
         android:text="@string/strRojo"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,4 +36,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnVerde" />
+
+    <Button
+        android:id="@+id/btnBlanco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/strBlanco"
+        app:layout_constraintBottom_toTopOf="@+id/btnRojo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

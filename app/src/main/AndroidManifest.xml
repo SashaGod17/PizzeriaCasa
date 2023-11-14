@@ -43,6 +43,10 @@
             android:exported="false">
 
         </activity>
+        <activity android:name=".CreaTuPropiaPizzaActivity"
+            android:exported="false">
+
+        </activity>
     </application>
 
 </manifest>

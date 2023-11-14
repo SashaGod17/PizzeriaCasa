@@ -1,5 +1,5 @@
 package com.example.pizzeria;
 
 public enum Ingrediente {
-    TOMATE, MOZARELLA, QUESOS_VARIADOS, TERNERA, POLLO, CHAMPIÑONES, PIMIENTOS, ACEITUNAS, SALAMI, BACON, ATUN, JAMON, PEPPERONI,SALSA_BARBACOA
+    Tomate, Mozarella, Quesos_Variados, Ternera, Pollo, Champiñones, Pimientos, Aceitunas, Salami, Bacon, Atun, Jamon, Pepperoni,Salsa_Barbacoa
 }

@@ -9,24 +9,36 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+
 public class ConfirmarActivity extends AppCompatActivity {
     Pizza pizza;
     Cliente cliente;
+    double precioTotal = 0;
+
+    String usuario;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.confirmar_layout);
         getWindow().getDecorView().setBackgroundColor(ManejadorColores.getColor());
         AppManager.getInstance().addActivity(this);
-        pizza = (Pizza) getIntent().getParcelableExtra("Pizza");
-        cliente = (Cliente) getIntent().getParcelableExtra("Cliente");
+        usuario = getIntent().getStringExtra("usuario");
+        cliente = DAOClientes.getInstance().buscarCliente(usuario);
         TextView txtResumen = findViewById(R.id.txtResumen);
-        txtResumen.setText(pizza.toString());
+        TextView txtPrecio = findViewById(R.id.txtPrecio);
+        ArrayList<Pizza> pizzas = cliente.getPedidoActual().getListaPizzas();
+        for(Pizza p : pizzas){
+            precioTotal += p.getPrecio();
+        }
+        cliente.getPedidoActual().setPrecioTotal(precioTotal);
+        txtPrecio.setText("Precio total: " + precioTotal + "€");
+        txtResumen.setText(cliente.getPedidoActual().imprimir());
     }
 
     public void confirmarPedido(View view) {
-        //cliente.getPedidoActual().anadirPizza(pizza);
-        //cliente.anadirPedido(cliente.getPedidoActual());
+        cliente.anadirPedido(cliente.getPedidoActual());
+        cliente.setPedidoActual(null);
         mostrarAlertDialog();
     }
 

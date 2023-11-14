@@ -20,6 +20,7 @@ public class Cliente implements Parcelable {
         this.correo = correo;
         this.constraseña = constraseña;
         this.favoritas = new ArrayList<Pizza>();
+        this.historialPedidos = new ArrayList<Pedido>();
         this.pedidoActual = null;
     }
 
