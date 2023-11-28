@@ -44,6 +44,11 @@ public class Pizza implements Parcelable {
         this.imagen=R.drawable.pizza_default;
     }
 
+    public Pizza(String nombre, ArrayList<Ingrediente> ingredientes,int imagen ) {
+        this.imagen = imagen;
+        this.ingredientes = ingredientes;
+        this.nombre = nombre;
+    }
 
     public int getImagen() {
         return imagen;
@@ -117,7 +122,8 @@ public class Pizza implements Parcelable {
     public String toString() {
         String cadena = "Pizza " + nombre + "\nIngredientes=" + ingredientes +
                 "\nTamaño=" + tamaño +
-                "\nPrecio=" + precio
+                "\nPrecio=" + precio +
+                "\n-------------------------------------------------"
                 ;
         return cadena.replace('[', ' ').replace(']', ' ');
 

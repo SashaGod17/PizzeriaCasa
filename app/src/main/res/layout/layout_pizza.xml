@@ -27,6 +27,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:button="@android:drawable/btn_star_big_off"
+        android:onClick="anadirFavorito"
         android:text="@string/strVacio" />
 
 </LinearLayout>

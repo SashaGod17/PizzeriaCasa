@@ -33,6 +33,14 @@ android {
 
 dependencies {
 
+    val sqlite_version = "2.3.0"
+
+    implementation("androidx.sqlite:sqlite:$sqlite_version")
+
+    implementation("androidx.sqlite:sqlite-ktx:$sqlite_version")
+
+    implementation("androidx.sqlite:sqlite-framework:$sqlite_version")
+
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.8.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")

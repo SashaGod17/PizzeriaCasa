@@ -3,6 +3,7 @@ package com.example.pizzeria;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -43,6 +44,18 @@ public class NuestrasPizzasActivity extends AppCompatActivity {
             i.putExtra("Pizza", pizza);
             i.putExtra("usuario", usuario);
             startActivity(i);
+        }
+    }
+
+    public void anadirFavorito(View view){
+        Pizza pizza;
+        CheckBox btnCheck = (CheckBox) findViewById(R.id.checkFav);
+        pizza = (Pizza) view.getTag();
+        if(btnCheck.isChecked()){
+            cliente.anadirFavorita(pizza);
+        }
+        else{
+            cliente.eliminarPizzaFav(pizza);
         }
     }
 

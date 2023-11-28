@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
     private void mostrarSesionIniciada() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("SesionIniciada")
+        builder.setMessage("Sesion Iniciada")
                 .setTitle("OK")
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override

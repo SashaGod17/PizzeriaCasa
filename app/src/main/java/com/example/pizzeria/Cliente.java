@@ -80,6 +80,10 @@ public class Cliente implements Parcelable {
         this.pedidoActual = pedidoActual;
     }
 
+    public void eliminarPizzaFav(Pizza p){
+        favoritas.remove(p);
+    }
+
     @Override
     public int describeContents() {
         return 0;

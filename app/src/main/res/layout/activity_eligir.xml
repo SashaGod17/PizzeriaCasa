@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:onClick="RepetirUltimo">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/txtTipoPizza"
@@ -46,6 +45,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="68dp"
         android:enabled="false"
+        android:onClick="RepetirUltimo"
         android:text="@string/strRepetirPedido"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnCrearPizza" />

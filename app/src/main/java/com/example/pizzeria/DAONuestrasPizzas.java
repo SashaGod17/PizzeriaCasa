@@ -13,9 +13,9 @@ public class DAONuestrasPizzas {
         this.ingredientes.add(Ingrediente.Champiñones);
         this.ingredientes.add(Ingrediente.Tomate);
         this.lista.add(new Pizza("Pizza Barbacoa", this.ingredientes));
-        this.lista.add(new Pizza("Pizza 4 Quesos", this.ingredientes));
-        this.lista.add(new Pizza("Pizza Margarita", this.ingredientes));
-        this.lista.add(new Pizza("Pizza Hawaiiana", this.ingredientes));
+        this.lista.add(new Pizza("Pizza 4 Quesos", this.ingredientes, R.drawable.cuantro_queesos));
+        this.lista.add(new Pizza("Pizza Margarita", this.ingredientes,R.drawable.margarita ));
+        this.lista.add(new Pizza("Pizza Hawaiiana", this.ingredientes, R.drawable.hawaiiana));
     }
     public static DAONuestrasPizzas getInstance() {
         if (dao == null) {

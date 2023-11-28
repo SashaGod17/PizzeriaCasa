@@ -20,12 +20,6 @@ public class PizzeriaJerezActivity extends AppCompatActivity {
         setContentView(R.layout.pizzeria_jerez_layout);
         usuario = getIntent().getStringExtra("usuario");
         cliente = DAOClientes.getInstance().buscarCliente(usuario);
-       /* try {
-            pedidoActual = (Pedido) getIntent().getParcelableExtra("Pedido Actual");
-        }
-        catch (Exception e){
-            pedidoActual = null;
-        }*/
         getWindow().getDecorView().setBackgroundColor(ManejadorColores.getColor());
         AppManager.getInstance().addActivity(this);
         Button btnElegir =(Button) findViewById(R.id.btnEligirPizza);
@@ -40,6 +34,14 @@ public class PizzeriaJerezActivity extends AppCompatActivity {
 
             }
         });
+        Button btnSalir = (Button) findViewById(R.id.btnSalir);
+      /*  btnSalir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+
+            }
+        });*/
         Button btnConfigurar = (Button) findViewById(R.id.btnConfigurar);
         btnConfigurar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,4 +61,8 @@ public class PizzeriaJerezActivity extends AppCompatActivity {
 
     }
 
+    //@Override
+   // public void onBackPressed(){
+
+    //}
 }
